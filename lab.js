@@ -366,41 +366,57 @@ console.log(helensInfo)
   And finally, print the value of the mileage.
 */
 
-//Code Here 
-
+class Vehicle {
+  constructor(capacity, color, mileage){
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  move(miles){
+    this.mileage += miles;
+    console.log(this.mileage)
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
-
+let myFirstVehicle = new Vehicle(5, 'white', 100000)
+console.log(myFirstVehicle)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
 
-  Write a class called Motorcycle that *extends* the Vehicle class. In the constructor, 
-  make sure you require all of the parameters from the Vehicle class as well as 2 
-  new ones: make and isCool. (Hint: don't forget to call the super function)
+  Write a class called Motorcycle that *extends* the Vehicle class. In the constructor, make sure you require all of the parameters from the Vehicle class as well as 2 new ones: make and isCool. (Hint: don't forget to call the super function)
 */
 
-//Code Here
+class Truck extends Vehicle {
+  constructor(capacity, color, mileage, make, isCool){
+    super(capacity, color, mileage)
+    this.make = make;
+    this.isCool = isCool;
+  }
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
-//Code Here 
+let myFirstMotorcycle = new Vehicle(1, "black and red", 38000)
+console.log(myFirstMotorcycle)
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
 
+myFirstMotorcycle.move(1533)
+console.log(myFirstMotorcycle)
+
 /*
   Let's make another class based off of Vehicle. 
 
-  Write a class called Boat that *extends* the Vehicle class. The constructor should take in
-  all the same arguments as Vehicle plus 3 new ones: 
+  Write a class called Boat that *extends* the Vehicle class. The constructor should take in all the same arguments as Vehicle plus 3 new ones: 
   name (boats gotta have cool names), type (ski boat, yacht, etc), and isSeaworthy.
 
   Create a method inside of the Boat class called checkSeaworthiness 
