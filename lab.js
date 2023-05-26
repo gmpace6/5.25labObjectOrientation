@@ -18,23 +18,23 @@ console.log(me)
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
-//Code here
-
-
+const dog = {
+  name: "Fido",
+  color: "black",
+  age: 3,
+  goodBoyOrGoodGirl: true
+}
+console.log(dog)
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//Code here
-
-
+console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
-
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -42,22 +42,32 @@ console.log(me)
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
-
+const favoriteThings = {
+  band: "Chevelle",
+  food: 'pambazos',
+  person: "my kids",
+  book: "too many to decide",
+  movie: "same as with books",
+  holiday: "Christmas"
+}
+console.log(favoriteThings)
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
-
+favoriteThings.car = "Lamborghini Murcielago"
+favoriteThings['show'] = "Gravity Falls"
+console.log(favoriteThings)
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = "blasphemy; still pambazos"
+favoriteThings['book'] = "sure; Harry Potter"
+console.log(favoriteThings)
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
