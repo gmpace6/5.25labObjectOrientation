@@ -202,7 +202,15 @@ console.log(user)
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor(name, age, color){
+  this.name = name;
+  this.age = age;
+  this.color = color;
+}
+}
+let cat1 = new Cat('demon', 66, 'red')
+console.log(cat1.name)
 
 
 
@@ -214,33 +222,49 @@ console.log(user)
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+let wizard1 = new Wizard('Tom', 'unknown', 'avada kedavra')
+
+wizard1.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
-    Write a class called Phone. We'll use it as if we were creating
-    phone objects to keep track of inventory using an app.
-
+    Write a class called Phone. We'll use it as if we were creating phone objects to keep track of inventory using an app.
     Phone will build phone objects with brand, model, storage, color, price, and sold properties.
-
-    Write a constructor that sets those values -- all of the values 
-    should come from the constructors parameters except sold, which
-    should always be set to false. We want that to be false since 
-    when we create a new phone, we're putting it in our inventory
-    and it won't be sold yet. 
-
+    Write a constructor that sets those values -- all of the values should come from the constructors parameters except sold, which should always be set to false. We want that to be false since when we create a new phone, we're putting it in our inventory and it won't be sold yet. 
     Create a method called 'sell'.
     sell should be a function that changes the value of sold to true and prints the string: '{brand} {model} has been sold.'
-    
-    Create another method called 'changePrice'. We can use this 
-    to change the price in case a phone isn't selling.
+    Create another method called 'changePrice'. We can use this to change the price in case a phone isn't selling.
     changePrice should take in one argument, 'newPrice'. 
-    Inside the function, reassign the value of the object's price
-    to be newPrice.
+    Inside the function, reassign the value of the object's price to be newPrice.
 */
 
-//Code Here
-
+class Phone {
+  constructor (brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell(){
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
+  changePrice(newPrice){
+    this.price = newPrice
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -252,7 +276,11 @@ console.log(user)
     - price: number
 */
 
-//Code Here
+let phone1 = new Phone('Motorola', '1000X', 128, 'pink', 399)
+let phone2 = new Phone('iPhone', '73S', 256, 'white', 1749)
+let phone3 = new Phone('Samsung', 'Recall', 64, 'black', 99)
+
+console.log(phone1, phone2, phone3)
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -261,7 +289,8 @@ console.log(user)
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
+phone3.changePrice(49)
+console.log(phone3)
 
 
 /*
@@ -270,7 +299,8 @@ console.log(user)
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here 
+phone2.sell()
+console.log(phone2)
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
