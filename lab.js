@@ -84,10 +84,16 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
-
-//Code Here
-
-
+console.log(carDetails.color)
+console.log(carDetails.make)
+console.log(carDetails.model)
+console.log(carDetails.year)
+let {color, make, model, year} = carDetails
+console.log(color)
+console.log(make)
+console.log(model)
+console.log(year)
+console.log(`My car is a ${color} ${year} ${make} ${model}.`)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -97,14 +103,15 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
+const Garrett = {firstName: "Garrett", lastName: "Pace", title: "Mr."}
 function greeting( obj ) {
-  //Code Here
+let {title, firstName, lastName} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
+console.log(greeting(Garrett))
 
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
@@ -117,9 +124,17 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+const populations = {
+  utah: 60000,
+  california: 100000,
+  texas: 50000,
+  arizona: 10000
+}
+function totalPopulation(obj){
+  let {utah, california, texas, arizona} = obj
+  return utah + california + texas + arizona
+}
+console.log(totalPopulation(populations))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -131,8 +146,21 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+const food = {
+  carb: 'tortilla',
+  fat: 'cheese',
+  protein: 'carne asada'
+}
+const foodArr = []
 
+function ingredients(obj) {
+  let {carb, fat, protein} = obj
+  foodArr.push(carb)
+  foodArr.push(fat)
+  foodArr.push(protein)
+  return foodArr
+}
+console.log(ingredients(food))
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
@@ -153,7 +181,10 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+user.name = 'Bryan G. Smith'
+user['email'] = 'bryan.smith@devmounta.in'
+console.log(user)
+
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -161,8 +192,8 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
-
+delete user.age
+console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
